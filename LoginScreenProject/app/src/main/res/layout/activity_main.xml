@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/DARK"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/upperGuideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/leftGuideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".14" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rightGuideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".86" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomGuideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".95" />
+
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/rightGuideLine"
+        app:layout_constraintStart_toStartOf="@+id/leftGuideLine"
+        app:layout_constraintTop_toBottomOf="@+id/upperGuideLine"
+        app:srcCompat="@drawable/logodefault3x" />
+
+    <Space
+        android:id="@+id/blankSpace"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent=".15"
+        app:layout_constraintTop_toBottomOf="@+id/logoImage" />
+
+    <TextView
+        android:id="@+id/firstText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter your email address"
+        android:textColor="#B6B6B6"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/rightGuideLine"
+        app:layout_constraintStart_toStartOf="@+id/leftGuideLine"
+        app:layout_constraintTop_toBottomOf="@+id/blankSpace" />
+
+    <TextView
+        android:id="@+id/secondText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="and password"
+        android:textColor="#B6B6B6"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/rightGuideLine"
+        app:layout_constraintStart_toStartOf="@+id/leftGuideLine"
+        app:layout_constraintTop_toBottomOf="@+id/firstText" />
+
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#E1B518"
+        android:hint="Email"
+        android:imeOptions="actionNext"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textColorHint="#B6B6B6"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/spaceAbovePassword"
+        app:layout_constraintLeft_toRightOf="@+id/leftGuideLine"
+        app:layout_constraintRight_toLeftOf="@+id/rightGuideLine" />
+
+    <Space
+        android:id="@+id/spaceAbovePassword"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/passwordEditText"
+        app:layout_constraintHeight_percent=".01" />
+
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#E1B518"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColor="@color/white"
+        android:textColorHint="#B6B6B6"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/spaceAboveButton"
+        app:layout_constraintLeft_toRightOf="@+id/leftGuideLine"
+        app:layout_constraintRight_toLeftOf="@+id/rightGuideLine" />
+
+    <ImageView
+        android:id="@+id/showPasswordImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:src="@drawable/openedeye"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/passwordEditText"
+        app:layout_constraintEnd_toStartOf="@+id/rightGuideLine"
+        app:layout_constraintTop_toTopOf="@+id/passwordEditText" />
+
+    <ImageView
+        android:id="@+id/hidePasswordImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/passwordEditText"
+        app:layout_constraintEnd_toStartOf="@+id/rightGuideLine"
+        app:layout_constraintTop_toTopOf="@+id/passwordEditText"
+        app:srcCompat="@drawable/closedeye" />
+
+    <Space
+        android:id="@+id/spaceAboveButton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonImage"
+        app:layout_constraintHeight_percent=".05" />
+
+    <ImageView
+        android:id="@+id/buttonImage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/spaceAboveUnable"
+        app:layout_constraintLeft_toRightOf="@+id/leftGuideLine"
+        app:layout_constraintRight_toLeftOf="@+id/rightGuideLine"
+        app:srcCompat="@drawable/button" />
+
+    <Space
+        android:id="@+id/spaceAboveUnable"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/unableLoginText"
+        app:layout_constraintHeight_percent=".1" />
+
+    <TextView
+        android:id="@+id/unableLoginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Unable to Log in?"
+        android:textColor="#BAB32E"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomGuideLine"
+        app:layout_constraintLeft_toRightOf="@+id/leftGuideLine"
+        app:layout_constraintRight_toLeftOf="@+id/rightGuideLine" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

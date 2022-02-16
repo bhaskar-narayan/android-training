@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/backGround"
+    android:padding="15dp">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/carName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mercedes Benz"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/carImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/car_one"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carName" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/agingMedia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1d h 34m"
+        android:textColor="#EAD204"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/agingMediaConst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aging Media: "
+        android:textColor="@color/pointColor"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toStartOf="@+id/agingMedia"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/stockNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="3257296730033"
+        android:textColor="@color/textColor"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/agingMediaConst" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/stockNumberConst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Stock: "
+        android:textColor="@color/pointColor"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toStartOf="@+id/stockNumber"
+        app:layout_constraintTop_toBottomOf="@+id/agingMedia" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/vinNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JH47968997KC65465"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/textColor"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stockNumber" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/vinNumberConst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vin: "
+        android:layout_marginTop="10dp"
+        android:textColor="@color/pointColor"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toStartOf="@+id/vinNumber"
+        app:layout_constraintTop_toBottomOf="@+id/stockNumber" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="5dp"
+        android:background="#818181"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
