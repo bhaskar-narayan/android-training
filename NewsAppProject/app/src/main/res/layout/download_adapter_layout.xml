@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/downloadAdapterLayout">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topDownload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".02"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/leftDownload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".03"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".97" />
+
+    <TextView
+        android:id="@+id/titleDownload"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/boldhead"
+        android:padding="5dp"
+        android:text="This is a Heading"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/leftDownload"
+        app:layout_constraintTop_toTopOf="@+id/topDownload" />
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/titleDownload" />
+
+    <ImageView
+        android:id="@+id/imageDownload"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/leftDownload"
+        app:layout_constraintTop_toBottomOf="@+id/space" />
+
+    <Space
+        android:id="@+id/space1"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageDownload" />
+
+    <TextView
+        android:id="@+id/authorDownload"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Author"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/leftDownload"
+        app:layout_constraintTop_toBottomOf="@+id/space1" />
+
+    <TextView
+        android:id="@+id/publishDownload"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/leftDownload"
+        app:layout_constraintTop_toBottomOf="@+id/authorDownload" />
+
+    <Space
+        android:id="@+id/space2"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/publishDownload" />
+
+    <TextView
+        android:id="@+id/descriptionDownload"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:textSize="16sp"
+        android:fontFamily="@font/semibold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/leftDownload"
+        app:layout_constraintTop_toBottomOf="@+id/space2" />
+
+    <Space
+        android:id="@+id/space3"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionDownload" />
+
+    <TextView
+        android:id="@+id/contentDownload"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Content"
+        android:textSize="17sp"
+        android:fontFamily="@font/light"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/leftDownload"
+        app:layout_constraintTop_toBottomOf="@+id/space3" />
+
+    <Space
+        android:id="@+id/space4"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/contentDownload" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="Delete"
+        android:textAllCaps="false"
+        app:icon="@drawable/ic_delete"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/space4" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/deleteButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
