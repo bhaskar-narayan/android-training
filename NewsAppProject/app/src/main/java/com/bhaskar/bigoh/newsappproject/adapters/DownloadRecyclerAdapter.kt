@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.bhaskar.bigoh.newsappproject.R
 import com.bhaskar.bigoh.newsappproject.database.Download
@@ -31,8 +32,10 @@ class DownloadRecyclerAdapter(val context: DownloadScreen) : RecyclerView.Adapte
         val deleteButton : Button = itemView!!.findViewById(R.id.deleteButton)
     }
 
+
+
     @SuppressLint("NotifyDataSetChanged")
-    fun setDataListItems(dataObject : ArrayList<Download>, database: DownloadDatabase) {
+    fun setDataListItems(dataObject : List<Download>, database: DownloadDatabase) {
         this.dataObject = dataObject;
         this.database = database
         notifyDataSetChanged()
@@ -43,10 +46,12 @@ class DownloadRecyclerAdapter(val context: DownloadScreen) : RecyclerView.Adapte
         viewType: Int
     ): DownloadRecyclerAdapter.MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.download_adapter_layout,parent,false)
+        fun test () {
+
+        }
         return DownloadRecyclerAdapter.MyViewHolder(view)
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     override fun onBindViewHolder(holder: DownloadRecyclerAdapter.MyViewHolder, position: Int) {
         holder.title.text = dataObject[position].title
         holder.author.text = dataObject[position].author
@@ -54,14 +59,12 @@ class DownloadRecyclerAdapter(val context: DownloadScreen) : RecyclerView.Adapte
         holder.description.text = dataObject[position].description
         holder.content.text = dataObject[position].content
         Picasso.get().load(dataObject[position].image).into(holder.image)
-
         holder.deleteButton.setOnClickListener {
             GlobalScope.launch {
+                val droppedDataObject = dataObject.drop(position)
                 database.downloadDao().deleteNews(dataObject[position])
             }
             Toast.makeText(context.context, "Deleted Successfully", Toast.LENGTH_SHORT).show()
-            val droppedDataObject = dataObject.drop(position)
-            notifyDataSetChanged()
         }
     }
 

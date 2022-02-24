@@ -2,6 +2,7 @@ package com.bhaskar.bigoh.newsappproject.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -69,6 +70,7 @@ class HomeRecyclerAdapter(val context: HomeScreen) : RecyclerView.Adapter<HomeRe
             GlobalScope.launch {
                 if (database.downloadDao().newsCheck(titleValue) == null) {
                     database.downloadDao().downloadNews(Download(0, titleValue, authorValue, publishValue, descriptionValue, contentValue, imageValue))
+                    Log.d("Repeated", "onBindViewHolder: ")
                 }
                 //database.downloadDao().downloadNews(Download(0, titleValue, authorValue, publishValue, descriptionValue, contentValue, imageValue))
             }

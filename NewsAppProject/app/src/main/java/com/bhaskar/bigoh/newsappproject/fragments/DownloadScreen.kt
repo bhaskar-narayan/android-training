@@ -12,12 +12,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bhaskar.bigoh.newsappproject.R
 import com.bhaskar.bigoh.newsappproject.adapters.DownloadRecyclerAdapter
 import com.bhaskar.bigoh.newsappproject.database.Download
+import com.bhaskar.bigoh.newsappproject.database.DownloadDao
 import com.bhaskar.bigoh.newsappproject.database.DownloadDatabase
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class DownloadScreen : Fragment() {
     private lateinit var database : DownloadDatabase
+    private lateinit var download : Download
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,15 +36,17 @@ class DownloadScreen : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        database = DownloadDatabase.getDatabase(requireActivity().applicationContext)
         val recyclerView : RecyclerView = requireView().findViewById(R.id.downloadRecyclerView)
         val recyclerAdapter = DownloadRecyclerAdapter(this)
         recyclerView.layoutManager = LinearLayoutManager(this.context)
         recyclerView.adapter = recyclerAdapter
 
-        database = DownloadDatabase.getDatabase(requireActivity().applicationContext)
+
 
         database.downloadDao().getNews().observe(viewLifecycleOwner, Observer {
-            recyclerAdapter.setDataListItems(it as ArrayList<Download>, database)
+            recyclerAdapter.setDataListItems(it, database)
         })
     }
 }
