@@ -46,9 +46,6 @@ class DownloadRecyclerAdapter(val context: DownloadScreen) : RecyclerView.Adapte
         viewType: Int
     ): DownloadRecyclerAdapter.MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.download_adapter_layout,parent,false)
-        fun test () {
-
-        }
         return DownloadRecyclerAdapter.MyViewHolder(view)
     }
 

@@ -16,6 +16,7 @@ interface DownloadDao {
 
     @Query ("SELECT * FROM news_table")
     fun getNews() : LiveData<List<Download>>
+
     @Query ("SELECT * FROM news_table WHERE title = :titleValue")
     fun newsCheck(titleValue : String) : Download
 }

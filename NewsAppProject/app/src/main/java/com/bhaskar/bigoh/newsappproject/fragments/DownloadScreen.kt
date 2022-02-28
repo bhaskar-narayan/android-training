@@ -19,7 +19,6 @@ import kotlinx.coroutines.launch
 
 class DownloadScreen : Fragment() {
     private lateinit var database : DownloadDatabase
-    private lateinit var download : Download
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

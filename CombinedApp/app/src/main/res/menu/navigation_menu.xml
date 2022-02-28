@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/activityLifeCycle"
+        android:title="Activity Lifecycle"/>
+
+    <item
+        android:id="@+id/fragmentLifeCycle"
+        android:title="Fragment Lifecycle"/>
+
+    <item
+        android:id="@+id/news"
+        android:title="Retrofit + Room + Bottom Navigation"/>
+    <item
+        android:id="@+id/alert"
+        android:title="Alert Dialogue"/>
+
+</menu>
