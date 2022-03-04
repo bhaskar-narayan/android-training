@@ -7,11 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import com.bhaskar.bigoh.combinedapp.R
+import com.bhaskar.bigoh.combinedapp.databinding.FragmentSecondBinding
 
 class SecondFragment : Fragment() {
-    private val TAG = "SecondFragment"
-
+    companion object {
+        val TAG = "SecondFragment"
+    }
+    private lateinit var binder: FragmentSecondBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "onCreate: ")
@@ -20,18 +24,17 @@ class SecondFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         Log.d(TAG, "onCreateView: ")
-        return inflater.inflate(R.layout.fragment_second, container, false)
+        binder = DataBindingUtil.inflate(inflater, R.layout.fragment_second, container, false)
+        return binder.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.d(TAG, "onViewCreated: ")
 
-        val secondFragmentText: TextView = requireView().findViewById(R.id.secondFragmentText)
-
-        secondFragmentText.setOnClickListener {
+        binder.secondFragmentText.setOnClickListener {
             val fragmentTransaction = parentFragmentManager.beginTransaction()
             fragmentTransaction.replace(R.id.container, FirstFragment()).commit()
         }

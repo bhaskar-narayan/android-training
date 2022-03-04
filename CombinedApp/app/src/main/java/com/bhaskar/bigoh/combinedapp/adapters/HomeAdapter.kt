@@ -1,6 +1,7 @@
 package com.bhaskar.bigoh.combinedapp.adapters
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,31 +9,26 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bhaskar.bigoh.combinedapp.R
 import com.bhaskar.bigoh.combinedapp.apimodels.NewsModel
-import com.bhaskar.bigoh.combinedapp.database.Model
+import com.bhaskar.bigoh.combinedapp.models.NewsDataModel
 import com.bhaskar.bigoh.combinedapp.database.NewsDatabase
-import com.bhaskar.bigoh.combinedapp.ui.fragments.HomeNews
+import com.bhaskar.bigoh.combinedapp.databinding.HomeAdapterLayoutBinding
+import com.bhaskar.bigoh.combinedapp.ui.fragments.NewsViewFragment
+import com.bhaskar.bigoh.combinedapp.ui.fragments.RoomRetrofitFragment
 import com.squareup.picasso.Picasso
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
-class HomeAdapter (val context: HomeNews): RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
+class HomeAdapter (val context: NewsViewFragment): RecyclerView.Adapter<HomeAdapter.MyViewHolder>() {
     private lateinit var database : NewsDatabase
-
+    private lateinit var binder: HomeAdapterLayoutBinding
+    private var isButtonEnable: Boolean = false
     private var dataObject = NewsModel()
 
 
-    class MyViewHolder (itemView: View?): RecyclerView.ViewHolder(itemView!!) {
-        val title: TextView = itemView!!.findViewById(R.id.newsTitle)
-        val image: ImageView = itemView!!.findViewById(R.id.newsImage)
-        val author: TextView = itemView!!.findViewById(R.id.newsAuthor)
-        val publish: TextView = itemView!!.findViewById(R.id.newsPublish)
-        val description: TextView = itemView!!.findViewById(R.id.newsDescription)
-        val content: TextView = itemView!!.findViewById(R.id.newsContent)
-        val button: Button = itemView!!.findViewById(R.id.button)
-    }
+    class MyViewHolder (itemView: View?): RecyclerView.ViewHolder(itemView!!) {}
 
     @SuppressLint("NotifyDataSetChanged")
     fun setDataListItems(dataObject: NewsModel, database: NewsDatabase) {
@@ -42,34 +38,43 @@ class HomeAdapter (val context: HomeNews): RecyclerView.Adapter<HomeAdapter.MyVi
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.home_adapter_layout, parent, false)
-        return MyViewHolder(view)
+        binder = DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.home_adapter_layout, parent, false)
+        return MyViewHolder(binder.root)
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.title.text = dataObject.articles[position].title
+        binder.newsTitle.text = dataObject.articles[position].title
         val titleValue = dataObject.articles[position].title.toString()
-        holder.author.text = dataObject.articles[position].author
+        binder.newsAuthor.text = dataObject.articles[position].author
         val authorValue = dataObject.articles[position].author.toString()
-        holder.description.text = dataObject.articles[position].description
+        binder.newsDescription.text = dataObject.articles[position].description
         val descriptionValue = dataObject.articles[position].description.toString()
-        Picasso.get().load(dataObject.articles[position].urlToImage).into(holder.image)
+        Picasso.get().load(dataObject.articles[position].urlToImage).into(binder.newsImage)
         val imageValue = dataObject.articles[position].urlToImage.toString()
-        holder.publish.text = dataObject.articles[position].publishedAt
+        binder.newsPublish.text = dataObject.articles[position].publishedAt
         val publishValue = dataObject.articles[position].publishedAt.toString()
-        holder.content.text = dataObject.articles[position].content
+        binder.newsContent.text = dataObject.articles[position].content
         val contentValue = dataObject.articles[position].content.toString()
-
-        GlobalScope.launch {
-            holder.button.isEnabled = database.newsDao().newsCheck(titleValue) == null
+        
+        CoroutineScope(Dispatchers.Default).launch {
+            if (database.newsDao().newsCheck(titleValue) == null) {
+                MainScope().launch {
+                    binder.button.isEnabled = true
+                }
+            } else {
+                MainScope().launch {
+                    binder.button.isEnabled = false
+                }
+            }
         }
 
-        holder.button.setOnClickListener {
-            GlobalScope.launch {
-                database.newsDao().downloadNews(Model(0, titleValue, authorValue, publishValue, descriptionValue, contentValue, imageValue))
+        binder.button.setOnClickListener {
+            CoroutineScope(Dispatchers.Default).launch {
+                database.newsDao().downloadNews(NewsDataModel(0, titleValue, authorValue, publishValue, descriptionValue, contentValue, imageValue))
             }
+            Toast.makeText(context.context, context.getString(R.string.news_downloaded), Toast.LENGTH_SHORT).show()
             notifyDataSetChanged()
-            Toast.makeText(context.context, "News downloaded", Toast.LENGTH_SHORT).show()
         }
     }
 

@@ -35,12 +35,14 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent=".97" />
 
-    <TextView
+    <EditText
         android:id="@+id/titleViewText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/nexaheavy"
         android:hint="Title"
+        android:textColorHint="@color/white"
+        android:background="@null"
         android:padding="5dp"
         android:textColor="@color/headingColor"
         android:textSize="35sp"
@@ -53,6 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_delete"
+        style="?android:attr/borderlessButtonStyle"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
@@ -65,11 +68,15 @@
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/titleViewText" >
 
-        <TextView
+        <EditText
             android:id="@+id/textViewText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Text"
+            android:textColorHint="@color/white"
+            android:background="@null"
+            android:textIsSelectable="true"
+            android:textColor="@color/white"
             android:textSize="18sp"
             android:padding="10dp"
             android:fontFamily="@font/monaco"
@@ -78,12 +85,25 @@
     </ScrollView>
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabEdit"
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/fabEdit"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/ic_edit"-->
+<!--        android:foregroundGravity="right|bottom"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/guideline5"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/guideline2" />-->
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabSaveEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_edit"
+        android:gravity="center"
+        android:textColor="@color/white"
         android:foregroundGravity="right|bottom"
+        android:text="Save"
+        android:visibility="gone"
+        app:icon="@drawable/ic_save"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@+id/guideline2" />
 

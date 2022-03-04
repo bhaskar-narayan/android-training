@@ -1,10 +1,11 @@
-package com.bhaskar.bigoh.combinedapp.database
+package com.bhaskar.bigoh.combinedapp.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.bhaskar.bigoh.combinedapp.constants.Constant
 
-@Entity(tableName = "news_combine_table")
-data class Model(
+@Entity(tableName = Constant.DB_TABLE_NAME)
+data class NewsDataModel(
     @PrimaryKey(autoGenerate = true)
     val id : Long,
     val title : String,

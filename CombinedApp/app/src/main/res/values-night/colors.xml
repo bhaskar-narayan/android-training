@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="red">#EF4949</color>
+    <color name="grey">#B6B6B6</color>
+    <color name="yellow">#E1B518</color>
+    <color name="bottomtext">#BAB32E</color>
+    <color name="barcolor">#FFEB3B</color>
+    <color name="blue">#2196F3</color>
+    <color name="viewpagerbody">#B8B8B8</color>
+    <color name="viewpagerheading">#1C89DF</color>
+</resources>

@@ -8,54 +8,52 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bhaskar.bigoh.combinedapp.R
-import com.bhaskar.bigoh.combinedapp.database.Model
+import com.bhaskar.bigoh.combinedapp.models.NewsDataModel
 import com.bhaskar.bigoh.combinedapp.database.NewsDatabase
-import com.bhaskar.bigoh.combinedapp.ui.fragments.DownloadNews
+import com.bhaskar.bigoh.combinedapp.databinding.DownloadAdapterLayoutBinding
+import com.bhaskar.bigoh.combinedapp.ui.fragments.NewsDownloadFragment
 import com.squareup.picasso.Picasso
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class DownloadAdapter(val context: DownloadNews) : RecyclerView.Adapter<DownloadAdapter.MyViewHolder>() {
-    private var dataObject = listOf<Model>()
+class DownloadAdapter(val context: NewsDownloadFragment) : RecyclerView.Adapter<DownloadAdapter.MyViewHolder>() {
+    private var dataObject = listOf<NewsDataModel>()
     private lateinit var database : NewsDatabase
+    private lateinit var binder: DownloadAdapterLayoutBinding
 
-    class MyViewHolder (itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
-        val title : TextView = itemView!!.findViewById(R.id.newsTitleDownload)
-        val author : TextView = itemView!!.findViewById(R.id.newsAuthorDownload)
-        val publish : TextView = itemView!!.findViewById(R.id.newsPublishDownload)
-        val description : TextView = itemView!!.findViewById(R.id.newsDescriptionDownload)
-        val content : TextView = itemView!!.findViewById(R.id.newsContentDownload)
-        val image : ImageView = itemView!!.findViewById(R.id.newsImageDownload)
-        val deleteButton : Button = itemView!!.findViewById(R.id.buttonDownload)
-    }
+    class MyViewHolder (itemView: View?) : RecyclerView.ViewHolder(itemView!!) {}
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setDataListItems(dataObject : List<Model>, database: NewsDatabase) {
+    fun setDataListItems(dataObject : List<NewsDataModel>, database: NewsDatabase) {
         this.dataObject = dataObject;
         this.database = database
         notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.download_adapter_layout,parent,false)
-        return DownloadAdapter.MyViewHolder(view)
+        binder = DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.download_adapter_layout, parent, false)
+        return MyViewHolder(binder.root)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.title.text = dataObject[position].title
-        holder.author.text = dataObject[position].author
-        holder.publish.text = dataObject[position].publish
-        holder.description.text = dataObject[position].description
-        holder.content.text = dataObject[position].content
-        Picasso.get().load(dataObject[position].image).into(holder.image)
-        holder.deleteButton.setOnClickListener {
-            GlobalScope.launch {
-                val droppedDataObject = dataObject.drop(position)
+        binder.newsTitleDownload.text = dataObject[position].title
+        binder.newsAuthorDownload.text = dataObject[position].author
+        binder.newsPublishDownload.text = dataObject[position].publish
+        binder.newsDescriptionDownload.text = dataObject[position].description
+        binder.newsContentDownload.text = dataObject[position].content
+        Picasso.get().load(dataObject[position].image).into(binder.newsImageDownload)
+
+        binder.buttonDownload.setOnClickListener {
+            CoroutineScope(Dispatchers.Default).launch {
+                //val droppedDataObject = dataObject.drop(position)
                 database.newsDao().deleteNews(dataObject[position])
             }
-            Toast.makeText(context.context, "News deleted", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context.context, context.getString(R.string.news_deleted), Toast.LENGTH_SHORT).show()
         }
     }
 

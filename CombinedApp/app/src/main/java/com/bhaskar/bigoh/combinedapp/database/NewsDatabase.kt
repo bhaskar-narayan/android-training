@@ -4,8 +4,10 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.bhaskar.bigoh.combinedapp.constants.Constant
+import com.bhaskar.bigoh.combinedapp.models.NewsDataModel
 
-@Database(entities = [Model::class], version = 1)
+@Database(entities = [NewsDataModel::class], version = 1)
 abstract class NewsDatabase: RoomDatabase() {
     abstract fun newsDao(): NewsDao
 
@@ -19,7 +21,7 @@ abstract class NewsDatabase: RoomDatabase() {
                         .databaseBuilder(
                             context.applicationContext,
                             NewsDatabase::class.java,
-                            "newsCombineDB"
+                            Constant.DATABASE_NAME
                         )
                         .build()
                 }

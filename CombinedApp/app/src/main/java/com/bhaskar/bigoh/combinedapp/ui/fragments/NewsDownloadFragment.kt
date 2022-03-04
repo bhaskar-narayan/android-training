@@ -5,14 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bhaskar.bigoh.combinedapp.R
 import com.bhaskar.bigoh.combinedapp.adapters.DownloadAdapter
 import com.bhaskar.bigoh.combinedapp.database.NewsDatabase
+import com.bhaskar.bigoh.combinedapp.databinding.FragmentDownloadNewsBinding
 
-class DownloadNews : Fragment() {
+class NewsDownloadFragment : Fragment() {
+    private lateinit var binder: FragmentDownloadNewsBinding
     private lateinit var database : NewsDatabase
 
 
@@ -23,18 +26,19 @@ class DownloadNews : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_download_news, container, false)
+    ): View {
+        binder = DataBindingUtil.inflate(inflater, R.layout.fragment_download_news, container, false)
+        return binder.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         database = NewsDatabase.getDatabase(requireActivity().applicationContext)
-        val recyclerView : RecyclerView = requireView().findViewById(R.id.downloadRecyclerView)
         val recyclerAdapter = DownloadAdapter(this)
-        recyclerView.layoutManager = LinearLayoutManager(this.context)
-        recyclerView.adapter = recyclerAdapter
+
+        binder.downloadRecyclerView.layoutManager = LinearLayoutManager(this.context)
+        binder.downloadRecyclerView.adapter = recyclerAdapter
 
 
         database.newsDao().getNews().observe(viewLifecycleOwner, Observer {

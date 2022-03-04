@@ -7,6 +7,10 @@ plugins {
 android {
     compileSdk 32
 
+    buildFeatures {
+        dataBinding true
+    }
+
     defaultConfig {
         applicationId "com.bhaskar.bigoh.combinedapp"
         minSdk 26
@@ -57,4 +61,11 @@ dependencies {
     implementation("androidx.room:room-ktx:2.4.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
     kapt("androidx.room:room-compiler:2.4.2")
+
+
+    implementation 'me.relex:circleindicator:2.1.6'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
 }
