@@ -2,44 +2,48 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/activityLifeCycle"
-        android:title="@string/activity_lifecycle"/>
+        android:title="@string/activity_lifecycle" />
 
     <item
         android:id="@+id/fragmentLifeCycle"
-        android:title="@string/fragment_lifecycle"/>
+        android:title="@string/fragment_lifecycle" />
 
     <item
         android:id="@+id/news"
-        android:title="@string/retrofit_room_bottom_navigation"/>
+        android:title="@string/retrofit_room_bottom_navigation" />
     <item
         android:id="@+id/alert"
-        android:title="@string/alert_dialogue"/>
+        android:title="@string/alert_dialogue" />
 
     <item
         android:id="@+id/viewPager"
-        android:title="@string/view_pager"/>
+        android:title="@string/view_pager" />
 
     <item
         android:id="@+id/toast"
-        android:title="@string/toast_and_snackbars"/>
+        android:title="@string/toast_and_snackbars" />
 
     <item
         android:id="@+id/login"
-        android:title="@string/car_media_login"/>
+        android:title="@string/car_media_login" />
 
     <item
         android:id="@+id/mvvm"
-        android:title="@string/mvvm_with_data_binding"/>
+        android:title="@string/mvvm_with_data_binding" />
     <item
         android:id="@+id/broadCast"
-        android:title="@string/broadcast"/>
+        android:title="@string/broadcast" />
 
     <item
         android:id="@+id/service"
-        android:title="@string/service_lifecycle"/>
+        android:title="@string/service_lifecycle" />
 
     <item
         android:id="@+id/shared"
-        android:title="@string/shared_preference"/>
+        android:title="@string/shared_preference" />
+
+    <item
+        android:id="@+id/paging"
+        android:title="@string/pagination_using_paging_3" />
 
 </menu>

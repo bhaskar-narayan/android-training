@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <variable
+            name="setAscending"
+            type="Boolean" />
+
+        <variable
+            name="setFilter"
+            type="Boolean" />
+
+        <variable
+            name="onItemClick"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/dark_brown_background">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/headingText"
+        style="@style/LatoRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:letterSpacing="0.06"
+        android:lineSpacingExtra="-1sp"
+        android:text="@string/vehicles"
+        android:textColor="@color/text_heading_white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/countText"
+        style="@style/LatoRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:letterSpacing="0.06"
+        android:lineSpacingExtra="-1sp"
+        android:text="(400)"
+        android:textSize="11sp"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="2dp"
+        app:layout_constraintBottom_toBottomOf="@id/headingText"
+        app:layout_constraintEnd_toStartOf="@+id/sortButton"
+        app:layout_constraintStart_toEndOf="@+id/headingText"
+        tools:text="(400)" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/filterButton"
+        style="@style/LatoRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@{setFilter==true?@drawable/rectangle_filled:@drawable/rectangle_stroke,default=@drawable/rectangle_stroke}"
+        android:drawableEnd="@{setFilter==true?@drawable/filter_black:@drawable/filter_icon,default=@drawable/filter_icon}"
+        android:drawablePadding="10dp"
+        android:letterSpacing="0.04"
+        android:lineSpacingExtra="5sp"
+        android:paddingVertical="9dp"
+        android:paddingStart="13dp"
+        android:paddingEnd="11dp"
+        android:text="@string/filter"
+        android:onClick="@{onItemClick}"
+        android:textColor="@{setFilter==true?@color/dark_brown_background:@color/white,default=@color/white}"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/sortButton"
+        style="@style/LatoRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle_stroke"
+        android:drawableEnd="@{setAscending?@drawable/sort_up:@drawable/sort_down,default=@drawable/sort_up}"
+        android:drawablePadding="10dp"
+        android:letterSpacing="0.04"
+        android:lineSpacingExtra="5sp"
+        android:paddingVertical="9dp"
+        android:paddingStart="15dp"
+        android:onClick="@{onItemClick}"
+        android:paddingEnd="12dp"
+        android:text="@string/sort"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/filterButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

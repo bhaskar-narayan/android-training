@@ -17,8 +17,11 @@ interface NewsDao {
     suspend fun deleteNews(newsDataModel: NewsDataModel)
 
     @Query("SELECT * FROM news_combine_table")
-    fun getNews() : LiveData<List<NewsDataModel>>
+    fun getNews(): LiveData<List<NewsDataModel>>
 
     @Query("SELECT * FROM news_combine_table WHERE title = :titleValue")
-    fun newsCheck(titleValue : String) : NewsDataModel
+    fun newsCheck(titleValue: String): NewsDataModel
+
+    @Query("DELETE FROM news_combine_table WHERE id = :id")
+    fun deleteSingleNews(id: Long): Unit
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/paginationNewsFragment">
+
+    <fragment
+        android:id="@+id/paginationNewsFragment"
+        android:name="com.bhaskar.bigoh.combinedapp.ui.fragments.PaginationNewsFragment"
+        android:label="paginaton_fragment_news"
+        tools:layout="@layout/paginaton_fragment_news">
+        <action
+            android:id="@+id/action_paginationNewsFragment_to_paginationDetailsFragment"
+            app:destination="@id/paginationDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paginationDetailsFragment"
+        android:name="com.bhaskar.bigoh.combinedapp.ui.fragments.PaginationDetailsFragment"
+        android:label="fragment_pagination_details"
+        tools:layout="@layout/fragment_pagination_details" />
+</navigation>

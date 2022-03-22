@@ -4,7 +4,6 @@ import com.bhaskar.bigoh.combinedapp.constants.Constant
 import com.bhaskar.bigoh.combinedapp.interfaces.ApiInterface
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
 class ApiClient {
     companion object {

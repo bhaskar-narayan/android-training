@@ -5,12 +5,16 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.os.Build
 import com.bhaskar.bigoh.combinedapp.constants.Constant
+import dagger.hilt.android.HiltAndroidApp
 
-class ApplicationActivity: Application() {
+
+@HiltAndroidApp
+class ApplicationActivity : Application() {
     override fun onCreate() {
         super.onCreate()
         createNotificationChannel()
     }
+
     private fun createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = "Notification Foreground"

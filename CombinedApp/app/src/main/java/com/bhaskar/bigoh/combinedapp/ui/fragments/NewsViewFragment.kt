@@ -1,33 +1,49 @@
 package com.bhaskar.bigoh.combinedapp.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.VERTICAL
+import com.bhaskar.bigoh.combinedapp.BR
 import com.bhaskar.bigoh.combinedapp.R
-import com.bhaskar.bigoh.combinedapp.adapters.HomeAdapter
-import com.bhaskar.bigoh.combinedapp.apimodels.NewsModel
-import com.bhaskar.bigoh.combinedapp.client.ApiClient
-import com.bhaskar.bigoh.combinedapp.database.NewsDatabase
 import com.bhaskar.bigoh.combinedapp.databinding.FragmentNewsViewBinding
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.bhaskar.bigoh.combinedapp.viewmodels.NewsViewFragmentViewModel
+import kotlinx.android.synthetic.main.fragment_news_view.*
 
 
 class NewsViewFragment : Fragment() {
     private lateinit var binder: FragmentNewsViewBinding
-    private lateinit var database : NewsDatabase
+    private lateinit var viewModel: NewsViewFragmentViewModel
+    //private lateinit var database: NewsDatabase
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        viewModel = makeApiCall()
+    }
+
+    private fun makeApiCall(): NewsViewFragmentViewModel {
+        val viewModel = ViewModelProvider(requireActivity())[NewsViewFragmentViewModel::class.java]
+        viewModel.getListDataObserver().observe(this, Observer {
+            if (it != null) {
+                viewModel.setAdapter(it.articles)
+                Log.d("API_RESPONSE", it.articles.toString())
+            }
+            else
+                Toast.makeText(requireContext(), "Error fetching", Toast.LENGTH_SHORT).show()
+        })
+        viewModel.callApi()
+        return viewModel
     }
 
     override fun onCreateView(
@@ -35,36 +51,23 @@ class NewsViewFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binder = DataBindingUtil.inflate(inflater, R.layout.fragment_news_view, container, false)
+        binder.setVariable(BR.viewModel, viewModel)
         return binder.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        database = NewsDatabase.getDatabase(requireActivity().applicationContext)
-        val recyclerAdapter = HomeAdapter(this@NewsViewFragment)
+        setupDataBinding(viewModel)
 
-        binder.newsRecyclerView.layoutManager = LinearLayoutManager(this.context)
-        binder.newsRecyclerView.adapter = recyclerAdapter
-        binder.homeProgressBar.visibility = View.VISIBLE
+    }
 
-        val apiClient = ApiClient.create()
-        val apiInterface = apiClient.getNews()
-
-        database = NewsDatabase.getDatabase(requireActivity().applicationContext)
-
-        apiInterface.enqueue(object : Callback<NewsModel> {
-            override fun onResponse(call: Call<NewsModel>, response: Response<NewsModel>) {
-                if (response.body() != null)
-                    recyclerAdapter.setDataListItems(response.body()!!, database)
-                binder.homeProgressBar.visibility = View.GONE
-            }
-
-            override fun onFailure(call: Call<NewsModel>, t: Throwable) {
-                binder.homeProgressBar.visibility = View.GONE
-            }
-        })
-
-
+    private fun setupDataBinding(viewModel: NewsViewFragmentViewModel) {
+        newsRecyclerView.apply {
+            layoutManager = LinearLayoutManager(this@NewsViewFragment.context)
+            val decoration = DividerItemDecoration(this@NewsViewFragment.context, VERTICAL)
+            addItemDecoration(decoration)
+        }
+        binder.executePendingBindings()
     }
 }

@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.fragments.BroadcastClass"
+        tools:context=".ui.fragments.BroadcastReceiverClass"
         android:background="@color/background">
 
         <com.google.android.material.textview.MaterialTextView

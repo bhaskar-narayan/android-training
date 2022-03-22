@@ -2,12 +2,11 @@ package com.bhaskar.bigoh.combinedapp.ui.fragments
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import com.bhaskar.bigoh.combinedapp.R
 import com.bhaskar.bigoh.combinedapp.databinding.FragmentSecondBinding
 
@@ -15,6 +14,7 @@ class SecondFragment : Fragment() {
     companion object {
         val TAG = "SecondFragment"
     }
+
     private lateinit var binder: FragmentSecondBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

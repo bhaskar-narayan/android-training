@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="server_ip">https://dev-api-gateway.carmedia2p0.com</string>
+    <string name="signature_value">/ga0RGNYHvNM5d0SLGQfpQWAPGJ8=</string>
+    <string name="host">com.carmedia2p0.capture.dev</string>
+    <string name="scheme">msauth</string>
+    <string name="policies">B2C_1A_SIGNIN_CAPTURE</string>
+    <string name="tenantName">c3d7ec63-33ae-46b9-ab9f-5e06b3a013ec</string>
+    <string name="azureAdB2CHostName">dev-login.carmedia2p0.com</string>
+    <string name="scope">https://carmedia2p0dev.onmicrosoft.com/b0aba807-9439-494d-945c-ee3726c19061/carmedia2p0.capture.api:access</string>
+
+
+
+
+</resources>

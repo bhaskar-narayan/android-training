@@ -7,8 +7,8 @@ import android.os.IBinder
 import android.provider.Settings
 
 
-class BackgroundServiceClass: Service() {
-    private lateinit var player : MediaPlayer
+class BackgroundServiceClass : Service() {
+    private lateinit var player: MediaPlayer
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         val runnable = Runnable {
@@ -22,6 +22,7 @@ class BackgroundServiceClass: Service() {
         thread.start()
         return START_STICKY
     }
+
     override fun onBind(p0: Intent?): IBinder? {
         return null
     }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dashboard_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.carmedia2p0.capture.ui.main.home.HomeFragment"
+        android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/inventoryFragment"
+        android:name="com.carmedia2p0.capture.ui.main.inventory.InventoryFragment"
+        android:label="InventoryFragment" />
+    <fragment
+        android:id="@+id/garageFragment"
+        android:name="com.carmedia2p0.capture.ui.main.garage.GarageFragment"
+        android:label="GarageFragment" />
+    <fragment
+        android:id="@+id/barcodeFragment"
+        android:name="com.carmedia2p0.capture.ui.main.barcode.BarcodeFragment"
+        android:label="BarcodeFragment" />
+</navigation>

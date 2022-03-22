@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/house"
+        android:title="@string/home"
+        />
+
+    <item
+        android:id="@+id/inventoryFragment"
+        android:icon="@drawable/inventory"
+        android:title="@string/inventory" />
+
+
+    <item
+        android:id="@+id/garageFragment"
+        android:icon="@drawable/garage"
+        android:title="@string/my_garage"
+        />
+    <item
+        android:id="@+id/barcodeFragment"
+        android:icon="@drawable/barcode"
+        android:title="@string/barcode"
+         />
+
+</menu>

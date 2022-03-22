@@ -2,19 +2,17 @@ package com.bhaskar.bigoh.combinedapp.ui.fragments
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import com.bhaskar.bigoh.combinedapp.R
-import com.bhaskar.bigoh.combinedapp.databinding.ActivityMainBinding
 import com.bhaskar.bigoh.combinedapp.databinding.FragmentFirstBinding
-import com.bhaskar.bigoh.combinedapp.ui.MainActivity
 
 class FirstFragment : Fragment() {
     private lateinit var binder: FragmentFirstBinding
+
     companion object {
         val TAG = "FirstFragment"
     }

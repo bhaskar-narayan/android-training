@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/drawable/ic_google_background.xml" value="0.169" />
         <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/layout/activity_fragment_life_cycle.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/layout/activity_fragment_lifecycle.xml" value="0.23697916666666666" />
         <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/layout/activity_main.xml" value="0.25052083333333336" />
@@ -19,7 +20,9 @@
         <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/layout/fragment_lifecycle.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/layout/fragment_login_screen.xml" value="0.2" />
         <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/layout/fragment_news.xml" value="0.2" />
-        <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/layout/fragment_news_view.xml" value="0.2056434373663959" />
+        <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/layout/fragment_news_view.xml" value="0.25" />
+        <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/layout/fragment_pagination.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/layout/fragment_pagination_details.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/layout/fragment_register.xml" value="0.2056434373663959" />
         <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/layout/fragment_second.xml" value="0.23697916666666666" />
         <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/layout/fragment_second2.xml" value="0.25052083333333336" />
@@ -27,12 +30,17 @@
         <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/layout/fragment_shared_preference.xml" value="0.2056434373663959" />
         <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/layout/fragment_toast_and_snack.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/layout/fragment_view_pager.xml" value="0.25052083333333336" />
-        <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/layout/home_adapter_layout.xml" value="0.264" />
+        <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/layout/home_adapter_layout.xml" value="0.25" />
+        <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/layout/list_items_layout.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/layout/navigation_header_layout.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/layout/pagination_recycler_row_layout.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/layout/paginaton_fragment_news.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/layout/view_pager_layout.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.264" />
         <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/menu/navigation_menu.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/mipmap-anydpi-v26/ic_google_round.xml" value="0.169" />
         <entry key="..\:/Users/Bhaskar/AndroidStudioProjects/CombinedApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.169" />
+        <entry key="app/src/main/res/layout/custom_dialog_layout.xml" value="0.32447916666666665" />
       </map>
     </option>
   </component>

@@ -1,25 +1,18 @@
 package com.bhaskar.bigoh.combinedapp.ui
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.MenuItem
-import android.view.View
-import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.bhaskar.bigoh.combinedapp.R
 import com.bhaskar.bigoh.combinedapp.databinding.ActivityMainBinding
-import com.bhaskar.bigoh.combinedapp.databinding.FragmentDataBindingBinding
 import com.bhaskar.bigoh.combinedapp.ui.fragments.*
-import com.bhaskar.bigoh.combinedapp.viewmodels.DataBindingViewModel
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationView
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     companion object {
         val TAG = "MainActivity"
@@ -33,12 +26,14 @@ class MainActivity : AppCompatActivity() {
         binder = DataBindingUtil.setContentView(this, R.layout.activity_main)
         Log.d(TAG, "onCreate: ")
 
-        toggle = ActionBarDrawerToggle(this, binder.drawerLayout, R.string.nav_open, R.string.nav_close)
+        toggle =
+            ActionBarDrawerToggle(this, binder.drawerLayout, R.string.nav_open, R.string.nav_close)
         renderFragment(ActivityFragment())
 
         binder.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
 
         binder.navigationView.setNavigationItemSelectedListener {
             when (it.itemId) {
@@ -50,7 +45,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.toast -> renderFragment(ToastAndSnack())
                 R.id.login -> renderFragment(LoginScreen())
                 R.id.mvvm -> renderFragment(DataBinding())
-                R.id.broadCast -> renderFragment(BroadcastClass())
+                R.id.broadCast -> renderFragment(BroadcastReceiverClass())
                 R.id.service -> renderFragment(AllService())
                 R.id.shared -> renderFragment(SharedPreferenceFragment())
             }
@@ -58,14 +53,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun renderFragment (fragment: Fragment) {
+    private fun renderFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.container, fragment)
         transaction.commit()
         binder.drawerLayout.closeDrawers()
     }
 
-    private fun renderNewsFragment (fragment: Fragment) {
+    private fun renderNewsFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.container, fragment)
         transaction.commit()

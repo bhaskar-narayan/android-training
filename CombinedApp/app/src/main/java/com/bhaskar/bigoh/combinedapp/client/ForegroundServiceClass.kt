@@ -8,14 +8,19 @@ import androidx.core.app.NotificationCompat
 import com.bhaskar.bigoh.combinedapp.R
 import com.bhaskar.bigoh.combinedapp.ui.fragments.AllService
 
-class ForegroundServiceClass: Service() {
+class ForegroundServiceClass : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         val resultIntent = Intent(this@ForegroundServiceClass, AllService::class.java)
-        val pendingIntent = PendingIntent.getActivity(this@ForegroundServiceClass, 0, resultIntent, 0)
+        val pendingIntent =
+            PendingIntent.getActivity(this@ForegroundServiceClass, 0, resultIntent, 0)
 
-        val notificationBuilder = NotificationCompat.Builder(this, "Foreground Service").setContentIntent(pendingIntent).setSmallIcon(
-            R.drawable.ic_android).setContentTitle("Foreground Service").setContentText(getString(R.string.notification_body))
+        val notificationBuilder =
+            NotificationCompat.Builder(this, "Foreground Service").setContentIntent(pendingIntent)
+                .setSmallIcon(
+                    R.drawable.ic_android
+                ).setContentTitle("Foreground Service")
+                .setContentText(getString(R.string.notification_body))
         val notification = notificationBuilder.build()
         val runnable = Runnable {
             run {

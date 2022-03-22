@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="onItemClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/dark_brown_background"
+    android:paddingTop="22dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/headingText"
+        style="@style/LatoRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:letterSpacing="0.06"
+        android:maxLines="2"
+        android:text="2019 Mercedes C- Class"
+        android:textColor="@color/very_light_pink"
+        android:textSize="14.5sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/subHeadingText"
+        style="@style/LatoRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:paddingVertical="1dp"
+        android:text="Avantgarde Edition Sedan "
+        android:textColor="@color/bluey_grey"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/headingText" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/missingMedia"
+        style="@style/LatoRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:ellipsize="end"
+        android:letterSpacing="-0.03"
+        android:maxLines="1"
+        android:paddingVertical="2dp"
+        android:text="@string/aging_media"
+        android:textAlignment="textEnd"
+        android:textColor="@color/bluey_grey"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toStartOf="@+id/missingMediaData"
+        app:layout_constraintStart_toStartOf="@+id/guideline8"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/missingMediaData"
+        style="@style/LatoRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:letterSpacing="-0.03"
+        android:maxLength="50"
+        android:maxLines="2"
+        android:paddingVertical="2dp"
+        android:text="1d 2h 36m"
+        android:textColor="@color/new_yellow"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline11"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/stockData"
+        style="@style/LatoRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:ellipsize="end"
+        android:letterSpacing="-0.03"
+        android:maxLines="1"
+        android:paddingVertical="2dp"
+        android:text="Stock:  2137863213"
+        android:textAlignment="textEnd"
+        android:textColor="@color/bluey_grey"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline11"
+        app:layout_constraintStart_toStartOf="@+id/guideline8"
+        app:layout_constraintTop_toBottomOf="@+id/missingMedia" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/vinData"
+        style="@style/LatoRegular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:ellipsize="end"
+        android:letterSpacing="-0.03"
+        android:maxLines="1"
+        android:paddingVertical="2dp"
+        android:text="Vin:  JH4KA4531KC033525"
+        android:textAlignment="textEnd"
+        android:textColor="@color/bluey_grey"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline11"
+        app:layout_constraintStart_toStartOf="@+id/guideline8"
+        app:layout_constraintTop_toBottomOf="@+id/stockData" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/statusIndicator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/rectangle_radio_unselected"
+        app:layout_constraintBottom_toBottomOf="@+id/status"
+        app:layout_constraintEnd_toStartOf="@+id/status"
+        app:layout_constraintTop_toTopOf="@+id/status" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/status"
+        style="@style/LatoRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:ellipsize="end"
+        android:gravity="center_vertical|end"
+        android:letterSpacing="-0.04"
+        android:maxLines="1"
+        android:paddingVertical="2dp"
+        android:text="@string/not_started"
+        android:textColor="@color/bluey_grey"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline11"
+        app:layout_constraintTop_toBottomOf="@+id/vinData" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.39" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/carImage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/car_dummy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline9"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/subHeadingText" />
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="9dp"
+        android:background="@color/indicator_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/carImage"
+        tools:layout_editor_absoluteX="22dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="22dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="15dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

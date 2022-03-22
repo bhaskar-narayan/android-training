@@ -74,4 +74,5 @@
     <string name="fired_toast">You have fired this Toast Message</string>
     <string name="fired_snack">You have fired this Snackbar</string>
     <string name="tap_me">Tap Me</string>
+    <string name="pagination_using_paging_3">Pagination using Paging 3</string>
 </resources>

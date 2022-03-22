@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.25555555555555554" />
+        <entry key="app/src/main/res/drawable/bottom_nav_selector.xml" value="0.25555555555555554" />
+        <entry key="app/src/main/res/drawable/default_dot.xml" value="0.25555555555555554" />
+        <entry key="app/src/main/res/drawable/dot_fill_black.xml" value="0.18645833333333334" />
+        <entry key="app/src/main/res/drawable/dot_fill_grey.xml" value="0.18645833333333334" />
+        <entry key="app/src/main/res/drawable/grey_ovalbackground.xml" value="0.25555555555555554" />
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_forward_24.xml" value="0.25555555555555554" />
+        <entry key="app/src/main/res/drawable/ic_baseline_directions_car_24.xml" value="0.25555555555555554" />
+        <entry key="app/src/main/res/drawable/ic_baseline_remove_24.xml" value="0.25555555555555554" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.25555555555555554" />
+        <entry key="app/src/main/res/drawable/ic_logo_default.xml" value="0.335" />
+        <entry key="app/src/main/res/drawable/onboarding_button_blue.xml" value="0.25555555555555554" />
+        <entry key="app/src/main/res/drawable/rectangle_curved_background.xml" value="0.21203703703703702" />
+        <entry key="app/src/main/res/drawable/rectangle_filled.xml" value="0.1405" />
+        <entry key="app/src/main/res/drawable/rectangle_stroke.xml" value="0.25277777777777777" />
+        <entry key="app/src/main/res/drawable/selected_dot.xml" value="0.25555555555555554" />
+        <entry key="app/src/main/res/drawable/tab_selector.xml" value="0.18385416666666668" />
+        <entry key="app/src/main/res/layout/activity_barcode.xml" value="0.16770833333333332" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.25427350427350426" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_on_boarding.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_virtual360_view.xml" value="0.159375" />
+        <entry key="app/src/main/res/layout/barcode_fragment.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/garage_fragment.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/home_fragment.xml" value="0.21481481481481482" />
+        <entry key="app/src/main/res/layout/inventory_fragment.xml" value="0.35863037109375" />
+        <entry key="app/src/main/res/layout/item_data.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/item_filter_keys.xml" value="0.3931658917333454" />
+        <entry key="app/src/main/res/layout/item_inventory_vehicles.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/item_onboarding.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/progress_view.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/toolbar_filter_sort.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/toolbar_home.xml" value="0.27922592162095616" />
+        <entry key="app/src/main/res/layout/welcome_slide_first.xml" value="0.16770833333333332" />
+        <entry key="app/src/main/res/menu/bottom_tab_menu.xml" value="0.3098958333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>

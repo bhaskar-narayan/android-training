@@ -8,7 +8,7 @@ import com.bhaskar.bigoh.combinedapp.constants.Constant
 import com.bhaskar.bigoh.combinedapp.models.NewsDataModel
 
 @Database(entities = [NewsDataModel::class], version = 1)
-abstract class NewsDatabase: RoomDatabase() {
+abstract class NewsDatabase : RoomDatabase() {
     abstract fun newsDao(): NewsDao
 
     companion object {

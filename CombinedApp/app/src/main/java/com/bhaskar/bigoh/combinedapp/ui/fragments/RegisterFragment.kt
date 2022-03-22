@@ -2,14 +2,12 @@ package com.bhaskar.bigoh.combinedapp.ui.fragments
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import com.bhaskar.bigoh.combinedapp.R
 import com.bhaskar.bigoh.combinedapp.constants.Constant
 import com.bhaskar.bigoh.combinedapp.databinding.FragmentRegisterBinding
@@ -39,12 +37,19 @@ class RegisterFragment : Fragment() {
 
             if (confirmPasswordString != passwordString)
                 return@setOnClickListener
-            val sharedCredential = requireActivity().getSharedPreferences(Constant.SHARED_CREDENTIAL, Context.MODE_PRIVATE)
+            val sharedCredential = requireActivity().getSharedPreferences(
+                Constant.SHARED_CREDENTIAL,
+                Context.MODE_PRIVATE
+            )
             val sharedEditor = sharedCredential.edit()
             sharedEditor.putString("userEmail", userEmailString)
             sharedEditor.putString("userPassword", passwordString)
             sharedEditor.apply()
-            Toast.makeText(it.context, getString(R.string.registration_successful), Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                it.context,
+                getString(R.string.registration_successful),
+                Toast.LENGTH_SHORT
+            ).show()
             val fragmentTransaction = parentFragmentManager.beginTransaction()
             fragmentTransaction.replace(R.id.container, SharedPreferenceFragment()).commit()
         }

@@ -1,10 +1,9 @@
 package com.bhaskar.bigoh.combinedapp.models
 
-import android.content.res.Resources
 import android.view.View
 import com.bhaskar.bigoh.combinedapp.R
 
-class ViewPagerData (view: View) {
+class ViewPagerData(view: View) {
     var view: View = view
     var allTitle = mutableListOf<String>()
     var allDescription = mutableListOf<String>()

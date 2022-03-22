@@ -1,14 +1,11 @@
 package com.bhaskar.bigoh.combinedapp.ui.fragments
 
-import android.app.Dialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.FragmentTransaction
+import androidx.fragment.app.Fragment
 import com.bhaskar.bigoh.combinedapp.R
 import com.bhaskar.bigoh.combinedapp.client.CustomAlert
 import com.bhaskar.bigoh.combinedapp.client.NormalAlert

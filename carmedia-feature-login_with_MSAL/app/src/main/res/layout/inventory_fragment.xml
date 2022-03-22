@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="setFilter"
+            type="Boolean" />
+
+        <variable
+            name="viewModel"
+            type="com.carmedia2p0.capture.ui.main.inventory.InventoryViewModel" />
+
+        <variable
+            name="onItemClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/dark_brown_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/toolbar_home"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditText"
+            style="@style/RobotoRegular"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/rectangle_curved_background"
+            android:drawableStart="@drawable/ic_baseline_search_24"
+            android:drawablePadding="8dp"
+            android:hint="@string/search_by_vin_or_stock_number"
+            android:letterSpacing="-0.04"
+            android:lineSpacingExtra="13sp"
+            android:paddingHorizontal="20dp"
+            android:textColorHint="@color/bluey_grey"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/guideline6"
+            app:layout_constraintTop_toBottomOf="@+id/include" />
+
+
+        <include
+            android:id="@+id/toolbarFilterSortLayout"
+            layout="@layout/toolbar_filter_sort"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/guideline6"
+            app:layout_constraintTop_toBottomOf="@+id/textInputEditText" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/filterKeysRecycleView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="@{setFilter?View.VISIBLE:View.GONE,default=gone}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarFilterSortLayout"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_filter_keys"
+            />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/vehiclesRecycleView"
+            android:layout_marginTop="20dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/guideline6"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/filterKeysRecycleView"
+            android:orientation="vertical"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_inventory_vehicles"
+            />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.035" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.965" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">CarMedia</string>
+    <string name="content_description">content description</string>
+
+
+    <string name="next">Next</string>
+    <string name="skip"><u>Skip</u></string>
+    <string name="view_inventory">View Inventory</string>
+    <string name="view_tasks">View Tasks </string>
+    <string name="start_capturing">Start Capturing</string>
+    <string name="complete_and_upload">Complete &amp; Upload</string>
+    <string name="view_overall_performance">View overall performance</string>
+    <string name="home">Home</string>
+    <string name="inventory">Inventory</string>
+    <string name="my_garage">My Garage</string>
+    <string name="barcode">Barcode</string>
+    <string name="search_by_vin_or_stock_number">Search by VIN or Stock Number</string>
+    <string name="filter">Filter</string>
+    <string name="sort">Sort</string>
+    <string name="vehicles">VEHICLES</string>
+    <string name="error">VEHICLES</string>
+    <string name="not_started">NOT STARTED</string>
+    <string name="vin">Vin:</string>
+    <string name="stock">Stock:</string>
+    <string name="aging_media">Aging Media:</string>
+
+</resources>

@@ -1,13 +1,12 @@
 package com.bhaskar.bigoh.combinedapp.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import com.bhaskar.bigoh.combinedapp.R
 import com.bhaskar.bigoh.combinedapp.databinding.FragmentToastAndSnackBinding
 import com.google.android.material.snackbar.Snackbar
@@ -23,7 +22,8 @@ class ToastAndSnack : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binder = DataBindingUtil.inflate(inflater, R.layout.fragment_toast_and_snack, container, false)
+        binder =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_toast_and_snack, container, false)
         return binder.root
     }
 

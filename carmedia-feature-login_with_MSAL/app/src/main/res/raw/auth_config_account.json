@@ -1,0 +1,14 @@
+{
+  "client_id" : "209a3251-501b-4dbf-af65-3dce8ae94e04",
+  "authorization_user_agent" : "WEBVIEW",
+  "redirect_uri" : "msauth://com.carmedia2p0.capture.dev/ga0RGNYHvNM5d0SLGQfpQWAPGJ8%3D",
+  "account_mode" : "SINGLE",
+  "broker_redirect_uri_registered": false,
+  "authorities" : [
+    {
+      "type": "B2C",
+      "authority_url": "https://dev-login.carmedia2p0.com/tfp/c3d7ec63-33ae-46b9-ab9f-5e06b3a013ec/B2C_1A_SIGNIN_CAPTURE/",
+      "default": true
+    }
+  ]
+}

@@ -1,16 +1,13 @@
 package com.bhaskar.bigoh.combinedapp.ui.fragments
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import com.bhaskar.bigoh.combinedapp.R
 import com.bhaskar.bigoh.combinedapp.constants.Constant
 import com.bhaskar.bigoh.combinedapp.databinding.FragmentSharedPreferenceBinding
@@ -26,7 +23,8 @@ class SharedPreferenceFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shared_preference, container, false)
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_shared_preference, container, false)
         return binding.root
     }
 
@@ -39,16 +37,21 @@ class SharedPreferenceFragment : Fragment() {
         }
 
         binding.loginButton.setOnClickListener {
-            val sharedCredential = requireActivity().getSharedPreferences(Constant.SHARED_CREDENTIAL, Context.MODE_PRIVATE)
+            val sharedCredential = requireActivity().getSharedPreferences(
+                Constant.SHARED_CREDENTIAL,
+                Context.MODE_PRIVATE
+            )
             val userEmailString = binding.userEmail.text.toString().trim()
             val userPasswordString = binding.password.text.toString().trim()
             val fetchedEmail = sharedCredential.getString("userEmail", null)
             val fetchedPassword = sharedCredential.getString("userPassword", null)
 
             if ((userEmailString == fetchedEmail) && (userPasswordString == fetchedPassword))
-                Toast.makeText(it.context, getString(R.string.login_successful), Toast.LENGTH_LONG).show()
+                Toast.makeText(it.context, getString(R.string.login_successful), Toast.LENGTH_LONG)
+                    .show()
             else
-                Toast.makeText(it.context, getString(R.string.login_failed), Toast.LENGTH_SHORT).show()
+                Toast.makeText(it.context, getString(R.string.login_failed), Toast.LENGTH_SHORT)
+                    .show()
         }
     }
 }
