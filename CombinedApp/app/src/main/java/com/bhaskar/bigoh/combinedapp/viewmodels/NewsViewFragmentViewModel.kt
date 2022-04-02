@@ -41,6 +41,5 @@ class NewsViewFragmentViewModel: ViewModel() {
             if (response.isSuccessful)
                 listData.postValue(response.body())
         }
-
     }
 }

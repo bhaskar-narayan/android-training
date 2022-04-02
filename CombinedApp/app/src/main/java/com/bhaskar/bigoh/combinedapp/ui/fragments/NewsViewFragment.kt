@@ -58,11 +58,11 @@ class NewsViewFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupDataBinding(viewModel)
+        setupDataBinding()
 
     }
 
-    private fun setupDataBinding(viewModel: NewsViewFragmentViewModel) {
+    private fun setupDataBinding() {
         newsRecyclerView.apply {
             layoutManager = LinearLayoutManager(this@NewsViewFragment.context)
             val decoration = DividerItemDecoration(this@NewsViewFragment.context, VERTICAL)

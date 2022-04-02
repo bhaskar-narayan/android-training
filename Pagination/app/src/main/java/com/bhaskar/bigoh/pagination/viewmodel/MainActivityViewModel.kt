@@ -18,9 +18,5 @@ import java.util.concurrent.Flow
 class MainActivityViewModel (private val apiInterface: ApiInterface): ViewModel() {
     val listData = Pager(PagingConfig(pageSize = 3, prefetchDistance = 5)) {
         ApiDataSource(apiInterface)
-    }
-
-    
-
-    // .flow.cachedIn(viewModelScope)
+    }.flow.cachedIn(viewModelScope)
 }
