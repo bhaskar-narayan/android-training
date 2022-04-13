@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:max="500"
+        android:rotation="-180"
+        android:scaleX="2"
+        android:scaleY="2"
+        app:indicatorSize="180dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/indicator"
+        app:layout_constraintEnd_toEndOf="@+id/indicator"
+        app:layout_constraintStart_toStartOf="@+id/indicator"
+        app:layout_constraintTop_toTopOf="@+id/indicator" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
